@@ -29,7 +29,7 @@
   "window": {
     "backgroundColor": "#f0f0f0",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "云信DEMO",
+    "navigationBarTitleText": "Legend",
     "navigationBarTextStyle": "black"
   },
   "tabBar": {

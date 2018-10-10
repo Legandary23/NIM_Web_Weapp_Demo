@@ -13,7 +13,8 @@ App(
     {
       globalData: {
         ENVIRONMENT_CONFIG,
-        PAGE_CONFIG
+        PAGE_CONFIG,
+        userInfo: null
       },
       onLaunch: function () {}
     }
