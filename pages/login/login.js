@@ -8,7 +8,8 @@ let pageConfig = {
     password: '',//用户输入密码
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    showView: false
   },
   // 测试使用
   onLoad: function() {
@@ -33,9 +34,14 @@ let pageConfig = {
               // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
               // 所以此处加入 callback 以防止这种情况
               if (app.userInfoReadyCallback) {
+                console.log("recall")
                 app.userInfoReadyCallback(res)
               }
             }
+          })
+        } else {
+          this.setData({
+            showView: true
           })
         }
       }
@@ -50,9 +56,11 @@ let pageConfig = {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
+        console.log(res)
         this.setData({
           userInfo: res.userInfo,
-          hasUserInfo: true
+          hasUserInfo: true,
+          showView: true
         })
       }
     } else {
