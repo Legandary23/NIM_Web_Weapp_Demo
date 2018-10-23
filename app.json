@@ -1,5 +1,6 @@
 {
   "pages": [
+    "pages/add_article/add_article",
     "pages/login/login",
     "pages/register/register",
     "pages/recentchat/recentchat",
