@@ -1,5 +1,6 @@
 *swp
 .idea/
 *.iml
+*.bak
 node_modules/
 package-lock.json
