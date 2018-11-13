@@ -1,10 +1,10 @@
 const config = {
     database: {
-        host: 'localhost', 	// database host
-        user: 'root', 		// your database username
-        password: 'root', 		// your database password
-        port: 3306, 		// default MySQL port
-        db: 'wechatdb' 		// your database name
+        host: 'localhost',  // database host
+        user: 'root',       // your database username
+        password: 'root',       // your database password
+        port: 3306,         // default MySQL port
+        db: 'animalworld'      // your database name
     },
     server: {
         host: '127.0.0.1',

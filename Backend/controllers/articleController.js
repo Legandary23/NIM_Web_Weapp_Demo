@@ -3,7 +3,7 @@ const articleController = {};
 articleController.get = (req, res) => {
     const { article_id } = req.params;
     req.getConnection((err, conn) => {
-        conn.query('SELECT article_id FROM articles WHERE article_id = ?', [article_id], (err, data) => {
+        conn.query('SELECT * FROM articles WHERE idarticles = ?', [article_id], (err, data) => {
             if (err) {
                 console.log(err);
                 res.json(err);
@@ -14,12 +14,13 @@ articleController.get = (req, res) => {
 };
 
 articleController.add = (req, res) => {
-    const article_data = req.body;
     console.log(req.body);
+    const group_id = req.body.group_id;
+    const metadata = JSON.stringify(req.body.metadata);
     req.getConnection((err, conn) => {
-        conn.query('INSERT INTO articles set ?', [article_data], (err, user) => {
-            console.log(user);
-            res.redirect('/');
+        conn.query('INSERT INTO articles (idarticles, idgroup, metadata) VALUES (NULL, ?, ?)', [group_id, metadata], (err, article) => {
+            console.log(err);
+            res.end("entry inserted");
         })
     })
 };
